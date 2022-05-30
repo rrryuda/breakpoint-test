@@ -1,0 +1,116 @@
+:root {
+    --main-w: 1280px;
+    --content-w: 840px;
+}
+
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: rgb(230, 230, 230);
+}
+
+span {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+    border-bottom: 1px solid rgb(160, 160, 160);
+    background: white;
+}
+
+main {
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    section {
+        display: flex;
+        width: var(--main-w);
+        margin: 0 auto;
+
+        .lnb {
+            width: 100%;
+            height: 0;
+            padding-top: 40px;
+
+            .box {
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                width: calc((var(--main-w) - var(--content-w)) / 2);
+                height: 360px;
+                padding: 24px;
+                border-radius: 8px;
+                border: 1px solid rgb(160, 160, 160);
+                background: white;
+            }
+        }
+
+        .rnb {
+            width: 100%;
+            height: 0;
+            padding-top: 40px;
+
+            .box {
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                width: calc((var(--main-w) - var(--content-w)) / 2);
+                height: 360px;
+                padding: 24px;
+                border-radius: 8px;
+                border: 1px solid rgb(160, 160, 160);
+                background: white;
+
+                &:nth-child(2) {
+                    top: 512px;
+                }
+            }
+
+            #ad {
+                background: rgb(143, 208, 255);
+            }
+        }
+
+        .content {
+            flex-shrink: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            width: var(--content-w);
+            padding: 40px;
+
+            article {
+                width: 100%;
+                height: 240px;
+                padding: 24px;
+                border: 1px solid rgb(160, 160, 160);
+                border-radius: 8px;
+                background: white;
+
+                // font
+                font-weight: 700;
+            }
+        }
+    }
+}
